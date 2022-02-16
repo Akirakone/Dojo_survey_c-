@@ -14402,13 +14402,13 @@
   "RootNamespace": "survey",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Akira\\Desktop\\C#\\Dojo_survey_c#\\survey\\Views\\index.cshtml",
-      "TargetPath": "Views\\index.cshtml",
+      "FilePath": "c:\\Users\\Akira\\Desktop\\C#\\Dojo_survey_c#\\survey\\Views\\First\\result.cshtml",
+      "TargetPath": "Views\\First\\result.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Akira\\Desktop\\C#\\Dojo_survey_c#\\survey\\Views\\results.cshtml",
-      "TargetPath": "Views\\results.cshtml",
+      "FilePath": "c:\\Users\\Akira\\Desktop\\C#\\Dojo_survey_c#\\survey\\Views\\First\\Index.cshtml",
+      "TargetPath": "Views\\First\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

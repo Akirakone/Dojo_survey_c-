@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 namespace Dojo_Survey.Controllers
 {
-    public class FirstController : Controllers
+    public class FirstController : Controller
     {
 
         public static string dName;
