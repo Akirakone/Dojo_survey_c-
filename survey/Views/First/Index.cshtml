@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dojo Survey</title>
-<style>
-    
-</style>
+    <style>
+
+    </style>
 </head>
+
 <body>
+    @using Dojo_Survey.Models
+    @model User
     <form action="process" method="POST">
         <label for="name">Name:</label><br>
-        <input type="text" name="name" id="name"><br><br>
+        <input type="text" name="name" id="name">
+        <br>
+        <span style="color: red;" asp-validation-for="name"> </span>
+        <br><br>
         <label for="location">Dojo Location:</label><br>
-        
+
         <div class="top-form">
             <input type="radio" name="location" value="Chicago">
             <label for="location">Chicago</label>
@@ -24,25 +31,32 @@
 
             <input type="radio" name="location" value="NorthCarolina">
             <label for="location">NorthCarolina</label>
+            <br>
+            <span style="color: red;" asp-validation-for="location"> </span>
         </div>
+        <br>
+        <label for="language">Favorite Language:</label><br>
+        <div class="lang-section">
+            <select name="language">
+                <option hidden selected disabled>--Select Language--</option>
+                <option>Python</option>
+                <option>JavaScript</option>
+                <option>C#</option>
+                <option>HTML</option>
+            </select>
             <br>
-            <label for="language">Favorite Language:</label><br>
-            <div class="lang-section">
-                <select name="language">
-                    <option hidden selected disabled>--Select Language--</option>
-                    <option>Python</option>
-                    <option>JavaScript</option>
-                    <option>C#</option>
-                    <option>HTML</option>
-                </select>
-            </div>
+            <span style="color: red;" asp-validation-for="language"> </span>
+        </div>
+        <br>
+        <div class="comment-section">
+            <label for="comments">Comments:</label>
+            <input id="comment" type="text" name="comments">
             <br>
-            <div class="comment-section">
-                <label for="comments">Comments:</label>
-                <input id="comment" type="text" name="comments">
-            </div>
-            <br>
-            <input class="submit" type="submit" value="submit">
-        </form>
+            <span style="color: red;" asp-validation-for="comments"> </span>
+        </div>
+        <br>
+        <input class="submit" type="submit" value="submit">
+    </form>
 </body>
+
 </html>

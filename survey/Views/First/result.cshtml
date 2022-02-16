@@ -7,11 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+     @using Dojo_Survey.Models
+    @model User
     <h2>Submitted info</h2>
-    <p>Name : @ViewBag.Name</p>
-    <p>Location : @ViewBag.Location</p>
-    <p>Language : @ViewBag.Language</p>
-    <p>Comments : @ViewBag.Comments</p>
+    <p>Name : @ViewBag.User.name</p>
+    <p>Location : @ViewBag.User.location</p>
+    <p>Language : @ViewBag.User.language</p>
+    <p>Comments : @ViewBag.User.comments</p>
     <form action="process2" method="post">
         <div><button value="submit" class="btn">Go Back</button></div>
     </form>

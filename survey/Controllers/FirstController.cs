@@ -1,15 +1,14 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Dojo_Survey.Models;
+
 namespace Dojo_Survey.Controllers
 {
     public class FirstController : Controller
     {
-
-        public static string dName;
-        public static string dLocation;
-        public static string dLanguage;
-        public static string dComments;
-
+        
+        public static User result;
+        
         [HttpGet]
         [Route("")]
         public ViewResult Index()
@@ -19,23 +18,22 @@ namespace Dojo_Survey.Controllers
 
         [HttpPost]
         [Route("process")]
-        public IActionResult  Process (string Name, string Location, string Language, string Comments)
+        public IActionResult Process(User usingNewUser)
         {
-            
-            dName = Name;
-            dLocation = Location;
-            dLanguage = Language;
-            dComments = Comments;
+            if(ModelState.IsValid)
+            {
+            result= usingNewUser;
             return RedirectToAction("Result");
+        }
+        else{
+            return View ("Index");
+        }
         }
         [HttpGet("Result")]
         public IActionResult Result()
         {
-            ViewBag.Name = dName;
-            ViewBag.Location = dLocation;
-            ViewBag.Language = dLanguage;
-            ViewBag.Comments = dComments;
-            return View ("Result");
+           ViewBag.User=result;
+            return View("Result");
         }
 
         [HttpPost("process2")]
