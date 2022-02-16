@@ -21,7 +21,7 @@ namespace Dojo_Survey.Controllers
         [Route("process")]
         public IActionResult  Process (string Name, string Location, string Language, string Comments)
         {
-            // Console.WriteLine($"Name : {Name} Location : {Location} Language: {Language} Comments : {Comments}");
+            
             dName = Name;
             dLocation = Location;
             dLanguage = Language;
